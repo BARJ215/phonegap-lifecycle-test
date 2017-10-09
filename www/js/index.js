@@ -26,7 +26,8 @@ function updateDisplay() {
         launched_count++;
         updateDisplay();
 
-        alert("device ready");
+        //alert("device ready");
+        console.log("device ready");
     }
 
 
@@ -35,7 +36,8 @@ function updateDisplay() {
 	paused_count++;
 	updateDisplay();
 	    
-	alert("pause");
+	//alert("pause");
+    console.log("pause");
     }
 	
 
@@ -44,5 +46,6 @@ function updateDisplay() {
 	resumed_count++;
 	updateDisplay();
 	    
-	alert("resume");
+	//alert("resume");
+    console.log("resume");
     }
