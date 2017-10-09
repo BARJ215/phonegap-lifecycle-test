@@ -6,13 +6,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 		
 	
 function updateDisplay() {
-	//$("#launched").text("Application launched: " + launched_count);
+	$("#launched").text("Application launched: " + launched_count);
     //document.getElementById("launched").innnerHTML = 'Application launched: '+launched_count;
-    document.getElementById("launched").innnerHTML = 'test';
-	//$("#resumed").text("Application paused: " + paused_count);
-    document.getElementById("resumed").innnerHTML = 'Application resumed: '+resumed_count;
-	//$("#paused").text("Application resumed: " + resumed_count);
-    document.getElementById("paused").innnerHTML = 'Application paused: '+paused_count;
+	$("#resumed").text("Application paused: " + paused_count);
+    //document.getElementById("resumed").innnerHTML = 'Application resumed: '+resumed_count;
+	$("#paused").text("Application resumed: " + resumed_count);
+    //document.getElementById("paused").innnerHTML = 'Application paused: '+paused_count;
 }
 
 
