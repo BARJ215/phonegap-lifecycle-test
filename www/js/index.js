@@ -1,3 +1,4 @@
+/*
 var paused_count =0;
 var resumed_count = 0;
 var launched_count = 0;
@@ -49,3 +50,18 @@ function updateDisplay() {
 	//alert("resume");
     console.log("resume");
     }
+*/
+
+var key = "pen";
+var value = "blue";
+var read;
+
+window.localStorage.setItem(key, value);
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    read = window.localStorage.getItem(key);
+    $("#readText").text(read);
+    
+}
