@@ -52,16 +52,19 @@ function updateDisplay() {
     }
 */
 
-var key = "pen";
-var value = "blue";
+var key = ["pen","eyes","birthday","phoneOS","glasses"];
+var value = ["blue","brown","220597","android","true"];
 var read;
-
-window.localStorage.setItem(key, value);
+if(key.length==value.length){
+    for(i=0; i<key.length;i++){
+        window.localStorage.setItem(key[i], value[i]);
+    }
+}
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-    read = window.localStorage.getItem(key);
+    read = window.localStorage.getItem("eyes");
     $("#readText").text(read);
     
 }
