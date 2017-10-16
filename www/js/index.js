@@ -73,7 +73,7 @@ function onDeviceReady() {
     read = JSON.parse(readJSON);
     var output = '';
     $.each(read, function (index, value) {
-        output += '<li>' + value.name + '<ul><li>CALORIES:'+value.calories+'</li><li>FAT: '+value.fat+'</li><li>SATURATES: '+value.saturates+'</li><li>SUGARS: '+value.sugars+'</li><li>SALT: '+value.salt+'</li></ul></li>';
+        output += '<li>' + value.name + '<ul data-role="listview" data-inset="true"  ><li>Calories:'+value.calories+'</li><li>Fat: '+value.fat+'</li><li>Saturates: '+value.saturates+'</li><li>Sugars: '+value.sugars+'</li><li>Salt: '+value.salt+'</li></ul></li>';
     });
     $('#searchFood').html(output).listview("refresh");
 }
