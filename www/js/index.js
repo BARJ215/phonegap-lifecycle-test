@@ -1,57 +1,3 @@
-/*
-var paused_count =0;
-var resumed_count = 0;
-var launched_count = 0;
-//If device launched, run 'onDeviceReady' function
-document.addEventListener("deviceready", onDeviceReady, false);
-		
-	
-function updateDisplay() {
-	$("#launched").text("Application launched: " + launched_count);
-    //document.getElementById("launched").innnerHTML = 'Application launched: '+launched_count;
-	$("#resumed").text("Application resumed: " + resumed_count);
-    //document.getElementById("resumed").innnerHTML = 'Application resumed: '+resumed_count;
-	$("#paused").text("Application paused: " + paused_count);
-    //document.getElementById("paused").innnerHTML = 'Application paused: '+paused_count;
-}
-
-
-// device APIs are available
-//
-    function onDeviceReady() {
-        //If app is resumed, run 'onResume' function
-        document.addEventListener("resume", onResume, false);
-        //If app is paused, run 'onPause' function
-        document.addEventListener("pause", onPause, false);
-        
-        launched_count++;
-        updateDisplay();
-
-        //alert("device ready");
-        console.log("device ready");
-    }
-
-
-    function onPause() {
-	
-	paused_count++;
-	updateDisplay();
-	    
-	//alert("pause");
-    console.log("pause");
-    }
-	
-
-    function onResume() {
-		
-	resumed_count++;
-	updateDisplay();
-	    
-	//alert("resume");
-    console.log("resume");
-    }
-*/
-
 var key = "chocbar";
 var data =[ 
     {"name":"Dinky Decker","calories":"130kcal","fat":"4.8g","saturates":"2.9g","sugars":"15g","salt":"0.07g"}, {"name":"Oreo","calories":"83kcal","fat":"5.2g","saturates":"2.9g","sugars":"7.3g","salt":"0.06g"},
@@ -73,7 +19,7 @@ function onDeviceReady() {
     read = JSON.parse(readJSON);
     var output = '';
     $.each(read, function (index, value) {
-        output += '<li>' + value.name + '<ul data-role="listview" data-inset="true"  ><li>Calories:'+value.calories+'</li><li>Fat: '+value.fat+'</li><li>Saturates: '+value.saturates+'</li><li>Sugars: '+value.sugars+'</li><li>Salt: '+value.salt+'</li></ul></li>';
+        output += '<li>' + value.name + '<ul><li>Calories:'+value.calories+'</li><li>Fat: '+value.fat+'</li><li>Saturates: '+value.saturates+'</li><li>Sugars: '+value.sugars+'</li><li>Salt: '+value.salt+'</li></ul></li>';
     });
     $('#searchFood').html(output).listview("refresh");
 }
