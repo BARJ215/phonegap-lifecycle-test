@@ -66,6 +66,10 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     readJSON= window.localStorage.getItem(key);
     read = JSON.parse(readJSON);
-    $("#readText").text(read);
+    $("#cal").text(read.calories);
+    $("#fat").text(read.fat);
+    $("#sat").text(read.saturates);
+    $("#sug").text(read.sugars);
+    $("#salt").text(read.salt);
     
 }
