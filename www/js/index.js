@@ -52,12 +52,18 @@ function updateDisplay() {
     }
 */
 
-var key = "NutritionalValue";
-var nutritInfo = {"calories":"130kcal","fat":"4.8g","saturates":"2.9g","sugars":"15g","salt":"0.07g"};
-var value = JSON.stringify(nutritInfo);
-
+var key = "chocbar";
+var data =[ 
+    {"name":"Dinky Decker","calories":"130kcal","fat":"4.8g","saturates":"2.9g","sugars":"15g","salt":"0.07g"}, {"name":"Oreo","calories":"83kcal","fat":"5.2g","saturates":"2.9g","sugars":"7.3g","salt":"0.06g"},
+    {"name":"Fudge Mini","calories":"116kcal","fat":"4.2g","saturates":"2.3g","sugars":"16g","salt":"0.0g"},
+    {"name":"Big Tasta","calories":"186kcal","fat":"12g","saturates":"6.5g","sugars":"16g","salt":"0.16g"},
+    {"name":"Curly Wurly","calories":"118kcal","fat":"4.6g","saturates":"2.5g","sugars":"12.5g","salt":"0.18g"}
+];
+var value = JSON.stringify(data);
 var readJSON;
 var read;
+var output;
+
 window.localStorage.clear();
 window.localStorage.setItem(key,value);
 
@@ -66,10 +72,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     readJSON= window.localStorage.getItem(key);
     read = JSON.parse(readJSON);
-    $("#cal").text(read.calories);
-    $("#fat").text(read.fat);
-    $("#sat").text(read.saturates);
-    $("#sug").text(read.sugars);
-    $("#salt").text(read.salt);
-    
+    $.each(data, function (index, value) {
+        output += '<li>' + value.name + '</li>';
+    });
+    $('#searchFood').html(output).listview("refresh");
 }
