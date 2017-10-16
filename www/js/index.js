@@ -52,19 +52,20 @@ function updateDisplay() {
     }
 */
 
-var key = ["pen","eyes","birthday","phoneOS","glasses"];
-var value = ["blue","brown","220597","android","true"];
+var key = "NutritionalValue";
+var nutritInfo = {"calories":"130kcal","fat":"4.8g","saturates":"2.9g","sugars":"15g","salt":"0.07g"};
+var value = JSON.stringify(nutritInfo);
+
+var readJSON;
 var read;
-if(key.length==value.length){
-    for(i=0; i<key.length;i++){
-        window.localStorage.setItem(key[i], value[i]);
-    }
-}
+window.localStorage.clear();
+window.localStorage.setItem(key,value);
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-    read = window.localStorage.getItem("eyes");
+    readJSON= window.localStorage.getItem(key);
+    read = JSON.parse(readJSON);
     $("#readText").text(read);
     
 }
