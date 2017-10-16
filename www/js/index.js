@@ -62,7 +62,6 @@ var data =[
 var value = JSON.stringify(data);
 var readJSON;
 var read;
-var output;
 
 window.localStorage.clear();
 window.localStorage.setItem(key,value);
@@ -72,6 +71,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     readJSON= window.localStorage.getItem(key);
     read = JSON.parse(readJSON);
+    var output = '';
     $.each(read, function (index, value) {
         output += '<li>' + value.name + '</li>';
     });
