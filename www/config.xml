@@ -6,10 +6,10 @@
         id        = "mob.app.dev.lifecycle"
         version   = "1.0.0">
 
-    <name>Application Lifecycle Test</name>
+    <name>Worksheet 4</name>
 
     <description>
-        A sample application that counts the occurances of lifecycle events.
+        Worksheet 4 exercises
     </description>
 
     <author href="worcester.ac.uk" email="c.bowers@worc.ac.uk">

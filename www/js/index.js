@@ -72,7 +72,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     readJSON= window.localStorage.getItem(key);
     read = JSON.parse(readJSON);
-    //For each 
     $.each(read, function (index, value) {
         output += '<li>' + value.name + '</li>';
     });
